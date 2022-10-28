@@ -27,10 +27,10 @@ module.exports.Student = model('Student', Schema({
 
 module.exports.validate = student => {
     const schema = joi.object({
-        name: joi.string().required().min(5).max(255),
-        email: joi.string().required().min(5).max(255).email(),
-        phone: joi.number().required(),
-        sid: joi.number().required()
+        name: joi.string().required().min(5).max(255).trim(),
+        email: joi.string().required().min(5).max(255).email().trim(),
+        phone: joi.number().required().trim(),
+        sid: joi.number().required().trim()
     });
     return schema.validate(student, {abortEarly: false});
 }
