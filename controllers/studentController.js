@@ -72,7 +72,7 @@ module.exports.deleteStudent = async (req, res) => {
         const student = await Student.findByIdAndDelete(studentId);
         return res.status(200).send({ message: "Student deleted successfully" });
     } catch (error) {
-        return res.status(400).send({ message: "Studnet deleted failed!" });
+        return res.status(400).send({ message: "Student deleted failed!" });
     }
 }
 
